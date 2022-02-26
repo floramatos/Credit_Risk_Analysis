@@ -1,11 +1,10 @@
-# Credit_Risk_Analysis
+# Credit Risk Analysis
+Training and evaluating supervised machine learning models for the prediction of credit card risk.
 
 ## Overview of the analysis
-The purpose of this project was to employ different techniques to train and evaluate models for the analysis of credit card risk. 
+The goal of the present project was to choose the best machine learning model to predict credit card risk. As low-risk loans are more frequent than high-risk loans, the models evaluated needed to account for the imbalance in the probability of the outcomes. Six different models were tested, 4 resampling methods and 2 ensemble methods.
 
-****Credit risk is an inherently unbalanced classification problem, as good loans easily outnumber risky loans.
-
-Dataset source: LendingClub, a peer-to-peer lending services company.
+Dataset source: LendingClub.
 
 ## Results
 Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all six machine learning models. Use screenshots of your outputs to support your results.
