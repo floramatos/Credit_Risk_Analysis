@@ -46,5 +46,8 @@ To run the models, the dataset was first cleaned and splitted in train and test 
 
 ![Screen Shot 2022-02-26 at 12 24 19 AM](https://user-images.githubusercontent.com/89421440/155836085-d0917341-0d9c-45bc-ae7f-1d8d3ae2b61b.png)
 
+### Models Evaluation
+Based on the measures listed above, the best machine learning model was Easy Ensemble Classifier. This model not only accounted for 93% of the dataset variance, but also had a high-risk recall of 0.92 with only a few false negative cases. The Easy Ensemble Classifier high-risk precision of 0.09, although low, was still higher than all the high-risk precision of the other models.
+
 ## Summary
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. If you do not recommend any of the models, justify your reasoning.
+In sum, Easy Ensemble Classifier was more effective in predicting credit card risk, compared to the other sampling and ensemble methods used here.
