@@ -2,66 +2,46 @@
 Training and evaluating supervised machine learning models for the prediction of credit card risk.
 
 ## Overview of the analysis
-The goal of the present project was to choose the best machine learning model to predict credit card risk. As low-risk loans are more frequent than high-risk loans, the models evaluated needed to account for the imbalance in the probability of the outcomes. Six different models were tested, 4 resampling methods and 2 ensemble methods.
+The goal of the present project was to choose the best machine learning model to predict credit card risk. As low-risk loans are more frequent than high-risk loans, the models evaluated needed to account for the imbalance in the probability of the outcomes. Six different models were tested, 4 resampling methods (Naive Random OverSampling, SMOTE OverSampling, UnderSampling, SMOTEENN Over- and UnderSampling) and 2 ensemble methods (Balanced Random Forest Classifier, Easy Ensemble Classifier).
 
 Dataset source: LendingClub.
 
 ## Results
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all six machine learning models. Use screenshots of your outputs to support your results.
+To run the models, the dataset was first cleaned and splitted in train and test sets. The models were then trained and different measures were generated to evaluate them. The main measures used here were the balanced accuracy score accounting for the variance explained by the overall model and the precision and sesitivity of the model for the high-risk outcome.
 
 ### Resampling Models
-resample the dataset, view the count of the target classes, train a logistic regression classifier, calculate the balanced accuracy score, generate a confusion matrix, and generate a classification report.
 
-#### Oversample data using the RandomOverSampler and SMOTE algorithms
 Naive Random OverSampling
-Counter({'low_risk': 51366, 'high_risk': 51366})
-balanced accuracy score = 0.6547385707934685
-confusion matrix
-array([[   73,    28],
-       [ 7069, 10035]])
+ - balanced accuracy score = 65%
+
+![Screen Shot 2022-02-26 at 12 21 18 AM](https://user-images.githubusercontent.com/89421440/155835992-3e037ad6-cad5-49be-b9c2-dd1fd6e71772.png)
 
 SMOTE OverSampling
-Counter({'low_risk': 51366, 'high_risk': 51366})
-balanced accuracy score = 0.66201409663885
-confusion matrix
-array([[   64,    37],
-       [ 5296, 11808]])
-       
-**SMOTE slight better than Naive Random
+- balanced accuracy score = 66%
 
-#### Undersample data using the ClusterCentroids algorithm
+![Screen Shot 2022-02-26 at 12 21 55 AM](https://user-images.githubusercontent.com/89421440/155836014-ab4ab3d7-c16f-4d15-90cc-ba5c204b2928.png)
+
 UnderSampling
-Counter({'high_risk': 246, 'low_risk': 246})
-balanced accuracy score = 0.66201409663885
-confusion matrix
-array([[   70,    31],
-       [10341,  6763]])
-**althought the score is similar to SMOTE, the confusion matrix seems to indicate that undersampling is worse than oversampling as it has less true negatives and more false negatives than SMOTE
+- balanced accuracy score = 66%
 
-#### Oversample and undersample data using the SMOTEENN algorithm
-determine if the results from the combinatorial approach are better at predicting credit risk than the resampling algorithms
+![Screen Shot 2022-02-26 at 12 22 44 AM](https://user-images.githubusercontent.com/89421440/155836037-be8cb173-76cf-4708-a043-b69ecf0161f7.png)
 
-SMOTEENN
-Counter({'high_risk': 68460, 'low_risk': 62011})
-balanced accuracy score = 0.5442369453268994
-confusion matrix
-array([[  73,   28],
-       [7324, 9780]])
-       
-### Compare machine learning models that reduce bias, BalancedRandomForestClassifier and EasyEnsembleClassifier, to predict credit risk
-train and compare two different ensemble classifiers, BalancedRandomForestClassifier and EasyEnsembleClassifier, to predict credit risk and evaluate each model
+SMOTEENN Over- and UnderSampling
+- balanced accuracy score = 54%
 
-BalancedRandomForestClassifier 
-balanced accuracy score = 0.7885466545953005
-confusion matrix
-array([[   71,    30],
-       [ 2153, 14951]])
-       
-EasyEnsembleClassifier
-balanced accuracy score = 0.9316600714093861
-confusion matrix
-array([[   93,     8],
-       [  983, 16121]])
-       
+![Screen Shot 2022-02-26 at 12 23 10 AM](https://user-images.githubusercontent.com/89421440/155836057-c25b20bb-a5b1-4779-9b1a-a092cbb2cbe9.png)
+
+### Ensemble Models
+
+Balanced Random Forest Classifier
+- balanced accuracy score = 79%
+
+![Screen Shot 2022-02-26 at 12 23 46 AM](https://user-images.githubusercontent.com/89421440/155836072-b8a63d1f-d3c1-4a18-b900-98ef5b650238.png)
+
+Easy Ensemble Classifier
+- balanced accuracy score = 93%
+
+![Screen Shot 2022-02-26 at 12 24 19 AM](https://user-images.githubusercontent.com/89421440/155836085-d0917341-0d9c-45bc-ae7f-1d8d3ae2b61b.png)
+
 ## Summary
 Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. If you do not recommend any of the models, justify your reasoning.
